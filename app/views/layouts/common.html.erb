@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <%= render partial: 'layouts/common/head' %>
+
+     
+  <body style="background-color: #EAF9FA;">
+    
+        <%= render partial: 'layouts/common/header' %>
+        <%= render partial: 'layouts/common/sidebar' %>
+
+    <%= yield %>
+
+       <%= render partial: 'layouts/common/footer' %>
+       <%= render partial: 'layouts/common/scripts' %>
+
+  </body>
+
+
+</html>

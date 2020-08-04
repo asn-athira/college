@@ -1,0 +1,51 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2 class="h2">Home / Courses</h2>
+      
+
+      </div>
+
+               <%= render partial: 'layouts/common/breadcrumbs' %>
+
+
+
+<div class="container-fluid" style="background-color: white;"><br>
+      <h3>Courses</h3>
+      <div class="table-responsive">
+
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Code</th>
+              <th>Description</th>
+              <th>No of Semester</th>
+              <th>Status</th>
+              <th>Action</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+          <% @courses.each do |course| %>
+
+            <tr>
+              <td><%=course.id%></td>
+              <td><%=course.name%></td>
+              <td><%=course.code%></td>
+              <td><%=course.description%></td>
+              <td><%=course.number_sem%></td>
+              <td><%=course.status%></td>
+              <td><button type="button" class="btn btn-warning"><i class="fa fa-eye"></i></button>
+              <button type="button" class="btn btn-warning"><i class='far fa-edit'></i></button>
+              <button type="button" class="btn btn-warning"><i class="fa fa-trash"></i></button></td>
+            </tr>
+             <% end %>
+
+            </tbody>
+        </table><br>
+
+      </div>
+
+    </div>
