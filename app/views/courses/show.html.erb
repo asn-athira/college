@@ -1,0 +1,30 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2 class="h2">Home / Courses</h2>
+      
+
+      </div>
+
+               <%= render partial: 'layouts/common/breadcrumbs' %>
+
+
+
+<div class="container-fluid" style="background-color: white;"><br>
+  <div class="row">
+    <div class="col-md-9">
+      <h3>Course - <%=@course.id%></h3>
+<div class="card">
+  <h5 class="card-header" style="background-color: #28B463;"><%=@course.name%></h5>
+  <div class="card-body" style="background: #DAF7A6;">
+    <h5 class="card-title"><%=@course.code%></h5>
+    <p class="card-text"><%=@course.description%></p>
+        <p class="card-text"><%=@course.number_sem%></p>
+    <p class="card-text"><%=@course.status%></p>
+
+    <%= link_to 'Go Back' ,courses_path, :class =>"btn btn-primary"  %>
+</div>
+</div>
+  </div>
+</div>
+</div>
+</main>

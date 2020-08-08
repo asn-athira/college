@@ -8,11 +8,10 @@ class CoursesController < ApplicationController
        @courses=Course.all
 	 end
     def new
-	 	@course=Course.new
+    @course=Course.new
 	 end
 	 def show
 		 @course=Course.find(params[:id])
-	      @book=Book.all
 	 end
 	 def edit
 		 @course=Course.find(params[:id])
@@ -33,12 +32,7 @@ class CoursesController < ApplicationController
 		else
 			render 'new'
 		end
-	    @course.update(bookadd_params)
-		 if @course.save
-          	render 'index'
-		else
-	 		render 'new'
-	 	end
+	   
 	 end
 	 def destroy
 		 @course=Course.find(params[:id])
@@ -50,14 +44,8 @@ class CoursesController < ApplicationController
 	 private
 
 	 def course_params
-        params.require(:course).permit(:name, :description)
+        params.require(:course).permit(:name, :code, :description, :number_sem, :status)
 	 end
     private
-    def bookadd_params
-	    params.require(:course).permit(:book_1, :book_2, :book_3)
-	end
-	private
-    def book_params
-	    params.require(:book).permit(:book_name, :book_desc, :book_authors, :book_cid)
-	end
+    
 end

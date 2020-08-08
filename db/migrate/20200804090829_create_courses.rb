@@ -6,7 +6,6 @@ class CreateCourses < ActiveRecord::Migration[6.0]
   	   	t.text   :description
     	t.integer :number_sem
     	t.string :status
-
     	t.timestamps
     end
   end
