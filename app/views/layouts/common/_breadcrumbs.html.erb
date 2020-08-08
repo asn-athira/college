@@ -1,19 +1,26 @@
- <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group mr-2">
-             <button type="button" class="btn btn-success">New Course <i class="fa fa-plus-square-o 
-              "></i></button>
-          </div>
+<div class="row">
+    <div class="col-md-4">
+             <%= link_to '+ Add New Course', new_course_path, :class =>"btn btn-success", :remote => true %>
+   </div>
+   <div class="col-md-4">
+                  
             <div class="btn-group mr-2">
-             <button type="button" class="btn btn-info">Refresh<i class="fa fa-refresh"></i></button>
+             <button type="button" class="btn btn-info"><i class="fas fa-sync-alt"></i></button>
+             <button type="button" class="btn btn-info"><i class="fas fa-filter"></i></button>
+             <button type="button" class="btn btn-info"><i class="fas fa-file-excel"></i></i>Excel</button>
+             <button type="button" class="btn btn-info"><i class="fas fa-file-csv"></i>CSV</button>
           </div>
-            <div class="btn-group mr-2">
+  </div>          
 
-             <button type="button" class="btn btn-info">Export <i class="far fa-upload"></i></button>
-           </div>
-             <div class="btn-group px-3">
-                <input type="text" placeholder="Search..">
-             </div>
-            <span data-feather="calendar"></span>
-          </button>
-        </div>
-        <br>
+  <div class="col-md-4">
+      <div class="input-group md-form form-sm form-2 pl-0">
+          <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+          <span class="btn btn-info" id="basic-text1"><i class="fas fa-search "
+                aria-hidden="true"></i></span>
+       </div>
+     </div>
+ </div>
+  
+
+</div> <br>

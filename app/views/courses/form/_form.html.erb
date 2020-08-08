@@ -1,0 +1,81 @@
+
+<%#
+  if @course.new_record?
+    form_method = :post
+    form_url = form_course_path
+    # @admin_user.status = LookUp::Base::INACTIVE
+  else
+    form_method = :put
+    form_url = form_course_path(@course)
+  end
+%>
+<h3><%#= (@course.new_record? ? 'Add Course' : 'Update Course') %></h3>
+<%= form_with(model: @course, local: true) do |f| %>
+
+<%#= form_with(url: form_url, 
+              id: "form_course", 
+              class: "form-floating", 
+              model: @course,
+              method: form_method) do |f| %>
+  <div class="row">
+     <div class="col-md-4">
+
+     <%= f.label :course_name , :class => "form-controll"%>
+   </div>
+      <div class="col-md-4">
+
+     <%= f.text_field :name, :class => "form-controll" %>
+    </div> 
+  </div>
+  <div class="row">
+
+    <div class="col-md-4">
+
+       <%= f.label :course_Code, :class => "form-controll" %>
+     </div>
+       <div class="col-md-4">
+
+       <%= f.text_field :code, :class => "form-controll" %>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-md-4">
+
+      <%= f.label :description, :class => "form-controll" %>
+    </div>
+      <div class="col-md-4">
+
+      <%= f.text_field :description, :class => "form-controll" %>
+    </div>
+
+  </div>
+  <div class="row">
+
+    <div class="col-md-4">
+
+
+      <%= f.label :number_of_sem, :class => "form-controll" %>
+    </div>
+    <div class="col-md-4">
+
+      <%= f.text_field :number_sem, :class => "form-controll" %>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-md-4">
+     <%= f.label :course_status, :class => "form-controll" %>
+   </div>
+     <div class="col-md-4">
+
+      <%= f.text_field :status, :class => "form-controll" %>
+    </div>
+  </div>
+
+     <div class="modal-footer">
+          <%= f.submit "submit" , :class =>"btn btn-danger" %>
+
+         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+    </div>
+  <% end %>        
